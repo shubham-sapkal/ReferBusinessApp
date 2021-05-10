@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "437482642057",
+    "firebase_url": "https://referbussiness-4f39b-default-rtdb.firebaseio.com",
+    "project_id": "referbussiness-4f39b",
+    "storage_bucket": "referbussiness-4f39b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:437482642057:android:202c6c0ec853eab05d4458",
+        "android_client_info": {
+          "package_name": "com.example.referbussinessapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "437482642057-lpuo4pvio35rana13jsli4u1bt9dbfqs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA89nkO78dtVRUv3CPwEm__BfiLInTNcio"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "437482642057-lpuo4pvio35rana13jsli4u1bt9dbfqs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
