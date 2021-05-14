@@ -64,10 +64,12 @@
         android:hint="Email"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintTop_toBottomOf="@+id/view3"
+
         app:startIconDrawable="@drawable/email" >
 
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
@@ -82,13 +84,16 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:hint="Password"
+        app:endIconMode="password_toggle"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintTop_toBottomOf="@id/emailTextlayout"
         app:startIconDrawable="@drawable/lock">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"/>
 
     </com.google.android.material.textfield.TextInputLayout>
     
@@ -100,6 +105,7 @@
         android:layout_marginRight="80dp"
         android:layout_marginLeft="80dp"
         android:text="LOGIN"
+        android:onClick="doLogin"
         app:layout_constraintTop_toBottomOf="@+id/passwordTextLayout"/>
 
     

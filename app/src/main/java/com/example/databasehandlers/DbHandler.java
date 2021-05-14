@@ -17,9 +17,18 @@ public class DbHandler {
 
     private DatabaseReference myDBReference;
 
+
+    // handler for "pendinglist" collection/table
     public DatabaseReference getInstanceOfPendingStudents(){
         myDBReference = FirebaseDatabase.getInstance().getReference().child("pendinglist");
         
+        return myDBReference;
+    }
+
+    // handler for "student" collection/table
+    public DatabaseReference getInstanceOfStudent(){
+
+        myDBReference = FirebaseDatabase.getInstance().getReference().child("student");
         return myDBReference;
     }
 
@@ -29,9 +38,6 @@ public class DbHandler {
         dbRef.push().setValue(registerStudentData);
 
         Toast.makeText(context, "Data Entered Successful!  ", Toast.LENGTH_LONG).show();
-
-
-
 
     }
 
