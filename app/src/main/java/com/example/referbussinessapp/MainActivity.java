@@ -3,8 +3,11 @@ package com.example.referbussinessapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.se.omapi.Session;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -15,6 +18,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
+import static android.app.PendingIntent.getActivity;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,12 +28,17 @@ public class MainActivity extends AppCompatActivity {
 
     DbHandler dbHandler;
 
+    SharedPreferences sharedpreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         dbHandler = new DbHandler();
+
+
+        sharedpreferences = getApplicationContext().getSharedPreferences("userdata",Context.MODE_PRIVATE);
 
     }
 
@@ -55,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
             }
 
             @Override
@@ -72,6 +83,15 @@ public class MainActivity extends AppCompatActivity {
 
         if(email.equals(emailEditText.getText().toString()) && password.equals(passwordEditText.getText().toString()) ){
             Toast.makeText(this, "login successful!", Toast.LENGTH_LONG).show();
+
+            startActivity(new Intent(MainActivity.this,HomeActivity.class));
+
+
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.putString("email",email);
+            editor.putString("password",password);
+            editor.apply();
+
         }
         else{
             Toast.makeText(this, "Login failed!", Toast.LENGTH_LONG).show();
